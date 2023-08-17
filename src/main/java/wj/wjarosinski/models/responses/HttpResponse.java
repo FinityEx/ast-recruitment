@@ -2,6 +2,8 @@ package wj.wjarosinski.models.responses;
 
 import com.sun.net.httpserver.Headers;
 
+import java.util.List;
+
 public class HttpResponse {
     public enum Code{
         OK(200),
@@ -29,6 +31,7 @@ public class HttpResponse {
         this.body = body;
         this.headers = headers;
         this.code = code;
+        this.headers.put("Access-Control-Allow-Origin", List.of("*"));
     }
 
     public Object getBody() {

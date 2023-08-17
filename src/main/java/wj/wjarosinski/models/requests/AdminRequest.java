@@ -4,23 +4,13 @@ public class AdminRequest {
     private Double dailyAllowanceRate;
     private Double carUsageRate;
     private Double compensationLimit;
-    private Boolean requestCurrentRates;
 
-    public AdminRequest(Double dailyAllowanceRate, Double carUsageRate, Double compensationLimit, Boolean requestCurrentRates) {
+    public AdminRequest(){}
+    public AdminRequest(Double dailyAllowanceRate, Double carUsageRate, Double compensationLimit) {
         this.dailyAllowanceRate = dailyAllowanceRate;
         this.carUsageRate = carUsageRate;
         this.compensationLimit = compensationLimit;
-        this.requestCurrentRates = requestCurrentRates;
     }
-
-    public Boolean getRequestCurrentRates() {
-        return requestCurrentRates;
-    }
-
-    public void setRequestCurrentRates(Boolean requestCurrentRates) {
-        this.requestCurrentRates = requestCurrentRates;
-    }
-
     public Double getDailyAllowanceRate() {
         return dailyAllowanceRate;
     }
@@ -31,5 +21,17 @@ public class AdminRequest {
 
     public Double getCompensationLimit() {
         return compensationLimit;
+    }
+
+    public void setDailyAllowanceRate(Double dailyAllowanceRate) {
+        this.dailyAllowanceRate = dailyAllowanceRate;
+    }
+
+    public void setCarUsageRate(Double carUsageRate) {
+        this.carUsageRate = carUsageRate;
+    }
+
+    public void setCompensationLimit(Double compensationLimit) {
+        this.compensationLimit = compensationLimit;
     }
 }

@@ -15,14 +15,21 @@ public class Reimbursement {
     }
 
     public enum Type {
-        RECEIPT_TAXI,
-        RECEIPT_HOTEL,
-        RECEIPT_PLANE_TICKET,
-        RECEIPT_TRAIN,
-        DAILY_ALLOWANCE,
-        CAR_USAGE;
-        Type(){}
+        RECEIPT_TAXI(Meta.RECEIPT),
+        RECEIPT_HOTEL(Meta.RECEIPT),
+        RECEIPT_PLANE_TICKET(Meta.RECEIPT),
+        RECEIPT_TRAIN(Meta.RECEIPT),
+        DAILY_ALLOWANCE(Meta.OTHER),
+        CAR_USAGE(Meta.OTHER);
+        private final Meta meta;
+        Type(Meta meta){this.meta = meta;}
+        public Meta getMeta(){return meta;}
+        public enum Meta{
+            RECEIPT,
+            OTHER
+        }
     }
+
 
     public Type getType() {
         return type;

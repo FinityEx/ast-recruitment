@@ -22,7 +22,11 @@ public class ClaimService {
             }
         });
 
-        return finalCost.get();
+        final boolean noLimit = Rates.COMPENSATION_LIMIT.rate == null;
+
+
+        return noLimit ? finalCost.get() : finalCost.get() < Rates.COMPENSATION_LIMIT.rate
+                ? finalCost.get() : Rates.COMPENSATION_LIMIT.rate;
     }
 
 

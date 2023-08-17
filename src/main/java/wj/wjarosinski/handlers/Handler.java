@@ -1,10 +1,7 @@
 package wj.wjarosinski.handlers;
 
 import java.io.InputStream;
-import java.security.InvalidKeyException;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.jdi.request.ExceptionRequest;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 

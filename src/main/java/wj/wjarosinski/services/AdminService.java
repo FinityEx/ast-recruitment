@@ -11,9 +11,7 @@ public class AdminService {
     public void setRatesAndLimits(AdminRequest adminRequest){
         Rates.CAR_USAGE_RATE.setRate(adminRequest.getCarUsageRate());
         Rates.DAILY_ALLOWANCE_RATE.setRate(adminRequest.getDailyAllowanceRate());
-        if(adminRequest.getCompensationLimit() != null) {
-            Rates.COMPENSATION_LIMIT.setRate(adminRequest.getCompensationLimit());
-        }
+        Rates.COMPENSATION_LIMIT.setRate(adminRequest.getCompensationLimit());
     }
 
     public static List<List<String>> getCurrentRates(){
@@ -24,9 +22,11 @@ public class AdminService {
         return rates;
     }
 
-    public static List<String> getReimbursementOptions(){
-        return Arrays.stream(Reimbursement.Type.values())
-                .map(String::valueOf).collect(Collectors.toList());
+
+    public static Map<Reimbursement.Type, Reimbursement.Type.Meta> getReimbursementOptions(){
+       final Map<Reimbursement.Type, Reimbursement.Type.Meta> map = new HashMap<>();
+       Arrays.stream(Reimbursement.Type.values()).forEach(type -> map.put(type, type.getMeta()));
+       return map;
     }
 
 }
