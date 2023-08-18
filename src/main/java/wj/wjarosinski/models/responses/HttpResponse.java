@@ -29,7 +29,7 @@ public class HttpResponse {
 
     public HttpResponse(Object body, Headers headers, Code code) {
         this.body = body;
-        this.headers = headers;
+        this.headers = headers != null ? headers : new Headers();
         this.code = code;
         this.headers.put("Access-Control-Allow-Origin", List.of("*"));
     }

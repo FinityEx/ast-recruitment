@@ -13,6 +13,7 @@ import static wj.wjarosinski.models.responses.HttpResponse.Code.OK;
 
 public class AdminHandler extends Handler {
     private final AdminService adminService;
+
     public AdminHandler(ObjectMapper objectMapper, AdminService adminService) {
         super(objectMapper);
         this.adminService = adminService;
@@ -35,7 +36,14 @@ public class AdminHandler extends Handler {
             response = super.writeResponse(e.getBody());
         } else if ("GET".equals(exchange.getRequestMethod()) && exchange.getRequestURI().toString()
                 .equals("/api/admin/reimbursement-options")) {
-            HttpResponse e = new HttpResponse(AdminService.getReimbursementOptions(),
+            HttpResponse e = new HttpResponse(AdminService.getAllReimbursementOptions(),
+                    getHeaders("Content-Type", "application/json"), OK);
+            exchange.getResponseHeaders().putAll(e.getHeaders());
+            exchange.sendResponseHeaders(e.getCode(), 0);
+            response = super.writeResponse(e.getBody());
+        } else if ("GET".equals(exchange.getRequestMethod()) && exchange.getRequestURI().toString()
+                .equals("/api/admin/reimbursement-options-enabled")) {
+            HttpResponse e = new HttpResponse(AdminService.getAvailableReimbursementOptions(),
                     getHeaders("Content-Type", "application/json"), OK);
             exchange.getResponseHeaders().putAll(e.getHeaders());
             exchange.sendResponseHeaders(e.getCode(), 0);

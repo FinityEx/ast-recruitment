@@ -1,10 +1,9 @@
 package wj.wjarosinski.models;
 
-import java.util.function.Predicate;
-
 public class Reimbursement {
     private Type type;
     private Double inputNumber;
+    private boolean enabled;
 
     public Reimbursement() {
     }
@@ -15,21 +14,35 @@ public class Reimbursement {
     }
 
     public enum Type {
-        RECEIPT_TAXI(Meta.RECEIPT),
-        RECEIPT_HOTEL(Meta.RECEIPT),
-        RECEIPT_PLANE_TICKET(Meta.RECEIPT),
-        RECEIPT_TRAIN(Meta.RECEIPT),
-        DAILY_ALLOWANCE(Meta.OTHER),
-        CAR_USAGE(Meta.OTHER);
+        RECEIPT_TAXI(Meta.RECEIPT, true),
+        RECEIPT_HOTEL(Meta.RECEIPT, true),
+        RECEIPT_PLANE_TICKET(Meta.RECEIPT, true),
+        RECEIPT_TRAIN(Meta.RECEIPT, true),
+        DAILY_ALLOWANCE(Meta.OTHER, true),
+        CAR_USAGE(Meta.OTHER, true);
         private final Meta meta;
-        Type(Meta meta){this.meta = meta;}
+        private boolean enabled;
+        Type(Meta meta, boolean enabled){
+            this.meta = meta;
+            this.enabled = enabled;
+        }
+        Type(Meta meta){this(meta, false);}
         public Meta getMeta(){return meta;}
+        public boolean getEnabled(){return enabled;}
+        public void setEnabled(boolean enabled){this.enabled = enabled;}
         public enum Meta{
             RECEIPT,
             OTHER
         }
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public Type getType() {
         return type;

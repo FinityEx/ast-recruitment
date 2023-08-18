@@ -1,16 +1,24 @@
 package wj.wjarosinski.models.requests;
 
+import wj.wjarosinski.models.Reimbursement;
+
+import java.util.List;
+
 public class AdminRequest {
     private Double dailyAllowanceRate;
     private Double carUsageRate;
     private Double compensationLimit;
+    private List<Reimbursement> reimbursementList;
 
     public AdminRequest(){}
-    public AdminRequest(Double dailyAllowanceRate, Double carUsageRate, Double compensationLimit) {
+    public AdminRequest(Double dailyAllowanceRate, Double carUsageRate, Double compensationLimit,
+                        List<Reimbursement> reimbursementList) {
         this.dailyAllowanceRate = dailyAllowanceRate;
         this.carUsageRate = carUsageRate;
         this.compensationLimit = compensationLimit;
+        this.reimbursementList = reimbursementList;
     }
+
     public Double getDailyAllowanceRate() {
         return dailyAllowanceRate;
     }
@@ -33,5 +41,13 @@ public class AdminRequest {
 
     public void setCompensationLimit(Double compensationLimit) {
         this.compensationLimit = compensationLimit;
+    }
+
+    public List<Reimbursement> getReimbursementList() {
+        return reimbursementList;
+    }
+
+    public void setReimbursementList(List<Reimbursement> reimbursementList) {
+        this.reimbursementList = reimbursementList;
     }
 }
