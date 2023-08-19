@@ -22,6 +22,7 @@ public class Main {
         server.createContext("/api/claims/make-claim", claimHandler::handle);
         server.createContext("/api/admin/rates", adminHandler::handle);
         server.createContext("/api/admin/reimbursement-options", adminHandler::handle);
+        server.createContext("/api/admin/reimbursement-options-enabled", adminHandler::handle);
         server.setExecutor(null);
         server.start();
     }
