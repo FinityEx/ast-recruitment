@@ -31,6 +31,7 @@ public class HttpResponse {
         this.body = body;
         this.headers = headers != null ? headers : new Headers();
         this.code = code;
+        //Allows CORS
         this.headers.put("Access-Control-Allow-Origin", List.of("*"));
     }
 

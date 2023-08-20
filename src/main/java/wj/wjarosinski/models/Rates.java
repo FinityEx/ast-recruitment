@@ -1,4 +1,4 @@
-package wj.wjarosinski.utils;
+package wj.wjarosinski.models;
 
 public enum Rates {
     CAR_USAGE_RATE("Allowance per driven km in $", 0.3),

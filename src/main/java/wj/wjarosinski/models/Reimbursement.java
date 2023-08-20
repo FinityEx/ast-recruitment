@@ -1,3 +1,5 @@
+//DTO class for reimbursement type and values
+
 package wj.wjarosinski.models;
 
 public class Reimbursement {
@@ -12,7 +14,8 @@ public class Reimbursement {
         this.type = type;
         this.inputNumber = inputNumber;
     }
-
+    //inner enum declaring the Type for Reimbursement requested
+    //either a Receipt type, or Others - car gas refund or daily allowance
     public enum Type {
         RECEIPT_TAXI(Meta.RECEIPT, true),
         RECEIPT_HOTEL(Meta.RECEIPT, true),

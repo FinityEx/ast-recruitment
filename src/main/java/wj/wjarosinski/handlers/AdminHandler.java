@@ -1,3 +1,4 @@
+// Handles admin requests and responses
 package wj.wjarosinski.handlers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

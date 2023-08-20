@@ -1,3 +1,5 @@
+// DTO class for Claim form
+
 package wj.wjarosinski.models;
 
 import java.util.ArrayList;

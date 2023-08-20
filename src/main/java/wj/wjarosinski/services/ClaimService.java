@@ -1,8 +1,10 @@
+//Service class
+
 package wj.wjarosinski.services;
 
 import wj.wjarosinski.models.Claim;
 import wj.wjarosinski.models.Reimbursement;
-import wj.wjarosinski.utils.Rates;
+import wj.wjarosinski.models.Rates;
 
 import java.util.concurrent.atomic.AtomicReference;
 
