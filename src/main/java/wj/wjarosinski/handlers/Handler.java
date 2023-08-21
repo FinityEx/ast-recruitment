@@ -1,3 +1,7 @@
+/* Parent class declaring methods for parsing, formatting and
+    handling requests. Originally created by piczmar @github.
+ */
+
 package wj.wjarosinski.handlers;
 
 import java.io.InputStream;

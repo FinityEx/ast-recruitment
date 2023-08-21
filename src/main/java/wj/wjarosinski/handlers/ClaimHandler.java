@@ -1,3 +1,5 @@
+//handles users' claims and server's response
+
 package wj.wjarosinski.handlers;
 
 import java.io.InputStream;

@@ -1,0 +1,1 @@
+mvnw.cmd clean install & start cmd.exe /k "cd ./ast-recruitment-fe & npm install & npm start" & java -jar ./target/AstRecruitment-1.0-SNAPSHOT-jar-with-dependencies.jar & pause || pause

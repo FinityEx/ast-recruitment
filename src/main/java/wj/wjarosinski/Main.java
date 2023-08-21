@@ -1,3 +1,5 @@
+//Entry point for the application, declares server port, endpoints and Handler classes
+
 package wj.wjarosinski;
 
 
@@ -25,6 +27,7 @@ public class Main {
         server.createContext("/api/admin/reimbursement-options-enabled", adminHandler::handle);
         server.setExecutor(null);
         server.start();
+        System.out.println("Backend server is up and running");
     }
 
 
