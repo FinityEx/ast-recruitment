@@ -1,6 +1,6 @@
 package wj.wjarosinski.services;
 
-import wj.wjarosinski.utils.Rates;
+import wj.wjarosinski.models.Rates;
 import wj.wjarosinski.models.requests.AdminRequest;
 import wj.wjarosinski.models.Reimbursement;
 

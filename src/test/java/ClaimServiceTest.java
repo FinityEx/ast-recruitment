@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import wj.wjarosinski.models.Claim;
 import wj.wjarosinski.models.Reimbursement;
 import wj.wjarosinski.services.ClaimService;
-import wj.wjarosinski.utils.Rates;
+import wj.wjarosinski.models.Rates;
 
 import java.time.Instant;
 import java.util.Arrays;
@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 
 public class ClaimServiceTest {
 
